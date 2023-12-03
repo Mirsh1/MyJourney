@@ -1,0 +1,15 @@
+//Activity 2
+let first = prompt("First Mumber")
+let second = prompt("First Mumber")
+prompt(first / second, "it's three!")
+
+/*
+//activity 1
+
+console.log ( -5 + 8 * 6 )
+
+Console.log ( (55+9) % 9 )
+
+Console.log (20 + -3*5 / 8 )
+
+Console.log (5 + 15 / 3 * 2 - 8 % 3)
