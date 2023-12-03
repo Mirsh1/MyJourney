@@ -18,8 +18,6 @@ for ( let i = 0; i <= Vallength; i++){
 
 console.log( `The sum is ${sum}`)
 
-
-
 /* Activity 2 - Vanilla JS Arrays
 Write a JavaScript program to calculate the average value of an array elements.
 
