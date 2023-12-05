@@ -1,0 +1,24 @@
+Activity 1 - Vanilla JS DOM
+Here is a sample html file with a submit button. Now modify the style of the paragraph text through JavaScript code.
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8 />
+        <title>Activity 1 - Vanilla JS DOM</title>
+    </head> 
+    <body>
+        <p id ='text'>Vanilla JS DOM</p> 
+        <div>
+        <button id="jsstyle"
+        onclick="js_style()">Style</button>
+        <script>
+            function js_style() {
+                let x = document.getElementById("text");
+                x.style.backgroundColor = "green";
+                    x.style.color = "white";
+            } 
+        </script>
+        </div>
+    </body>
+</html>
