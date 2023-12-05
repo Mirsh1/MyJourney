@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8 />
+        <title>Activity 2 - Vanilla JS DOM</title>
+    </head> 
+    <body>
+        <p id ='text'>Input Radius value and get volume of a sphere</p> 
+        <div>
+
+            <div> 
+
+                <div class="radius">
+                    <label for="radiusInput" class="form-label">Radius</label>
+                    <input type="number" class="form-control" id="radiusField">
+                  </div>
+                </div>
+            
+                  <div class="volume">
+                    <label id="result" for="volumeOutput" class="form-label">volume</label>
+                    <input type="number" class="form-control" id="volumeField">
+                  </div>
+
+
+            </div>
+        <button id="result"
+        onclick="result()">Calculate</button>
+        <script>
+            function result() {
+                let radiusInput = document.getElementById("radiusField").value ;
+            let volume = (4 / 3) * Math.PI * Math.pow(parseFloat(radiusInput), 3);
+
+            document.getElementById("volumeField").value = volume
+        } 
+        </script>
+        </div>
+    </body>
+</html>
