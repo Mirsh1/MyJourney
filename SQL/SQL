@@ -1,0 +1,36 @@
+SQL Activities print:
+
+-- Exercise 01: Display all attributes from tblappointments
+SELECT * FROM tblappointments;
+
+-- Exercise 02: Display three attributes from another table using DISTINCT
+SELECT DISTINCT attribute1, attribute2, attribute3 FROM othertable;
+
+-- Exercise 03: Identify unique counties that patients come from
+SELECT DISTINCT County FROM tblpatient;
+
+-- Exercise 04: Identify unique titles, providing insight into age groups
+SELECT DISTINCT Title FROM tblpatient;
+
+-- Exercise 01: Select * from locations and three attributes
+SELECT * FROM locations;
+SELECT location_id, city, postal_code AS 'zip code' FROM locations l;
+
+-- Exercise 02: Display employee_id, last_name, and Monthly Salary
+SELECT employee_id, last_name, salary AS 'Monthly Salary' FROM employees;
+
+-- Determine the yearly salary assuming that the salary is 'Monthly Salary'
+SELECT employee_id, last_name, salary * 12 AS 'Yearly Salary' FROM employees;
+
+-- Determine the years of service using the functions (DATEDIFF) and also (ROUND)
+SELECT employee_id, last_name, ROUND(DATEDIFF('2021-11-17', hire_date) / 365, 0) AS 'Years of Service' FROM employees;
+
+-- Exercise 03: Combine first name and last name as 'Fullname' and use ORDER BY
+SELECT first_name || ' ' || last_name AS 'Fullname' FROM persons;
+SELECT country_id, country_name, region_id FROM countries ORDER BY country_name DESC;
+SELECT last_name, first_name, phone_number FROM employees ORDER BY last_name, first_name;
+
+-- Exercise 04: Display lastname, email, salary, and sort by salary in descending order
+SELECT last_name, email, salary
+FROM persons
+ORDER BY salary DESC, last_name ASC;

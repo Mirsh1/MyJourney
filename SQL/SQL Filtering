@@ -1,0 +1,76 @@
+-- Exercise 01: Distinct department ids from the employees table
+SELECT DISTINCT department_id FROM employees;
+
+-- Exercise 02: Top salary within the organization
+SELECT employee_id, first_name, last_name, job_id
+FROM employees
+ORDER BY salary DESC
+LIMIT 1;
+
+-- Exercise 03: Department names and department ids from 5th to 10th department
+SELECT department_name, department_id
+FROM departments
+WHERE department_id BETWEEN 5 AND 10
+ORDER BY department_id;
+
+-- Exercise 04: Distinct location ids from the department table
+SELECT DISTINCT location_id FROM departments;
+
+-- Exercise 05: Employees earning under or equal to 5000
+SELECT first_name, last_name, salary, phone_number
+FROM employees
+WHERE salary <= 5000;
+
+-- Exercise 06: Employees hired after the beginning of 1999
+SELECT employee_id, first_name, last_name, hire_date
+FROM employees
+WHERE hire_date > '1999-01-01';
+
+
+
+Part 2 below:
+
+-- Exercise 01: Employees whose name begins with 'P' and salary below 8000
+SELECT *
+FROM employees
+WHERE first_name LIKE 'P%' AND salary < 8000;
+
+-- Exercise 02: Employees hired in 1997 and 1998 with department id 5
+SELECT *
+FROM employees
+WHERE (EXTRACT(YEAR FROM hire_date) = 1997 OR EXTRACT(YEAR FROM hire_date) = 1998)
+  AND department_id = 5;
+
+-- Exercise 03: Employees employed in 1998, 1999, 2000 with details and order by last name
+SELECT first_name, last_name, salary, email, hire_date AS 'Year of Hire'
+FROM employees
+WHERE EXTRACT(YEAR FROM hire_date) IN (1998, 1999, 2000)
+ORDER BY last_name;
+
+-- Exercise 04: Employees with salary between 5000 and 10000
+SELECT *
+FROM employees
+WHERE salary BETWEEN 5000 AND 10000;
+
+-- Exercise 05: Employees with salaries between 4000 and 12000, ordered by first name
+SELECT *
+FROM employees
+WHERE salary BETWEEN 4000 AND 12000
+ORDER BY first_name;
+
+-- Exercise 06: Employees not in departments 1, 4, 8, 10 sorted by salary in descending order
+SELECT *
+FROM employees
+WHERE department_id NOT IN (1, 4, 8, 10)
+ORDER BY salary DESC;
+
+-- Exercise 07: Employees with 's' at the end of their first name, sorted by first name
+SELECT *
+FROM employees
+WHERE first_name LIKE '%s'
+ORDER BY first_name;
+
+-- Exercise 08: Employees with last names having three unknown letters followed by 'g'
+SELECT *
+FROM employees
+WHERE last_name LIKE '___g';
